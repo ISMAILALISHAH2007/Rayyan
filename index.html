@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday Rayyan 🎉</title>
+<style>
+  :root{
+    --bg-1:#071026; --bg-2:#081426;
+    --accent:#FF7AB6; --accent-2:#7BE5FF;
+    --glass: rgba(255,255,255,0.06);
+    --muted: rgba(230,238,248,0.78);
+    --max-width:1140px; --ease: cubic-bezier(.2,.9,.3,1);
+  }
+  /* Reset */
+  *{box-sizing:border-box} html,body{height:100%}
+  body{
+    margin:0; min-height:100vh;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+    background:
+      radial-gradient(900px 400px at 8% 12%, rgba(123,229,255,0.03), transparent 6%),
+      radial-gradient(700px 300px at 92% 88%, rgba(255,122,182,0.02), transparent 8%),
+      linear-gradient(180deg,var(--bg-1),var(--bg-2));
+    color:#E6EEF8; -webkit-font-smoothing:antialiased;
+    display:flex;justify-content:center;padding:20px;
+  }
+
+  /* Container */
+  .wrap{width:100%;max-width:var(--max-width);border-radius:16px;padding:16px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+    box-shadow:0 12px 50px rgba(2,6,23,0.6);position:relative;overflow:hidden;
+  }
+
+  /* Title / Header */
+  header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:800;color:#041026}
+  .title h1{margin:0;font-size:20px;letter-spacing:-0.2px;animation:titlePulse 3s infinite}
+  .title p{margin:4px 0 0;color:var(--muted);font-size:13px}
+  @keyframes titlePulse{
+    0%{transform:scale(1);filter:drop-shadow(0 6px 20px rgba(123,122,122,0.06))}
+    50%{transform:scale(1.02);filter:drop-shadow(0 16px 40px rgba(123,122,122,0.12))}
+    100%{transform:scale(1)}
+  }
+
+  .controls{display:flex;gap:8px;align-items:center}
+  .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:inherit;cursor:pointer;font-weight:700}
+  .btn:focus{outline:2px solid rgba(255,255,255,0.06);outline-offset:2px}
+
+  /* Grid layout */
+  .grid{display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:14px}
+  @media (max-width:980px){ .grid{grid-template-columns:1fr} .side{order:2} .hero{order:1} }
+
+  /* HERO */
+  .hero{padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+  .greeting h2{margin:0;font-size:22px}
+  .typed{margin-top:10px;font-size:15px;color:var(--muted);min-height:46px;font-weight:500}
+
+  .meta{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+  .meta .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:10px;min-width:120px;border:1px solid rgba(255,255,255,0.03)}
+  .meta .card strong{display:block;font-size:16px}
+  .meta .card small{color:var(--muted)}
+
+  /* SLIDESHOW - cinematic crossfade + zoom */
+  .slideshow{margin-top:16px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);position:relative}
+  .slides{position:relative;height:250px;background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.06))}
+  .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1);transition:opacity 900ms var(--ease), transform 900ms var(--ease)}
+  .slides img.active{opacity:1;transform:scale(1.06);filter:drop-shadow(0 30px 60px rgba(0,0,0,0.35))}
+  .slide-controls{position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .dots{display:flex;gap:8px}
+  .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.14);cursor:pointer}
+  .dot.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 26px rgba(123,122,122,0.12)}
+  .arrow{background:rgba(0,0,0,0.28);padding:8px;border-radius:10px;cursor:pointer;border:1px solid rgba(255,255,255,0.02)}
+
+  /* SIDE */
+  .side{padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01))}
+  .side-inner{display:flex;flex-direction:column;gap:12px}
+  .big-age{font-size:44px;font-weight:800}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+  .photo{border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);background:var(--glass);min-height:80px;display:flex;align-items:center;justify-content:center}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* message note */
+  .note{margin-top:12px;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.03)}
+
+  /* modal */
+  .modal{position:fixed;inset:0;display:grid;place-items:center;background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.85));z-index:10020;padding:12px;opacity:0;pointer-events:none;transition:opacity .28s}
+  .modal.show{opacity:1;pointer-events:auto}
+  .modal-card{width:min(720px,96%);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;text-align:center;position:relative}
+  .close{position:absolute;top:10px;right:12px;background:transparent;border:none;color:rgba(230,238,248,0.8);font-weight:700;font-size:18px;cursor:pointer}
+
+  /* confetti layer + canvas */
+  #particleCanvas{position:fixed;inset:0;pointer-events:none;z-index:1}
+  .confetti-layer{position:fixed;inset:0;pointer-events:none;z-index:9999}
+
+  /* intro overlay */
+  .intro{position:fixed;inset:0;display:grid;place-items:center;background:linear-gradient(180deg, rgba(2,6,23,0.98), rgba(2,6,23,0.995));z-index:10030;color:#fff;transition:opacity .45s}
+  .intro.hide{opacity:0;pointer-events:none}
+  .intro h1{font-size:36px;margin-bottom:8px;letter-spacing:-0.6px;text-shadow:0 8px 40px rgba(123,122,122,0.12)}
+  .intro .pulseCircles{position:absolute;inset:0;pointer-events:none}
+
+  /* reveal helper */
+  .reveal{opacity:0;transform:translateY(12px);transition:all .6s var(--ease)}
+  .reveal.show{opacity:1;transform:none}
+
+  /* Responsive */
+  @media (max-width:980px){ .slides{height:240px} .gallery{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:480px){
+    .slides{height:180px} .title h1{font-size:16px} .greeting h2{font-size:18px}
+    .big-age{font-size:30px} .gallery{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- Intro overlay -->
+<div id="intro" class="intro" aria-hidden="false">
+  <div style="text-align:center;max-width:760px;padding:8px 18px;position:relative;z-index:2">
+    <h1>Happy Birthday Rayyan 🎉</h1>
+    <p style="opacity:0.9">A surprise made with care from Ismail Shah</p>
+  </div>
+  <div class="pulseCircles" aria-hidden="true"></div>
+</div>
+
+<div class="wrap" id="wrap" role="main" aria-labelledby="mainTitle">
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true">R</div>
+      <div class="title">
+        <h1 id="mainTitle">Rayyan Hassan (Mohani)</h1>
+        <p>Born October 18, 2007 · Celebrate the moment</p>
+      </div>
+    </div>
+
+    <div class="controls" role="toolbar" aria-label="controls">
+      <button id="musicBtn" class="btn" aria-pressed="false">Play ▶</button>
+      <button id="surpriseBtn" class="btn">Surprise 🎁</button>
+      <button id="muteBtn" class="btn">Mute 🔈</button>
+    </div>
+  </header>
+
+  <div class="grid" style="margin-top:14px">
+    <section class="hero">
+      <div class="greeting reveal">
+        <h2>Hey Rayyan ~ this one’s made for you.</h2>
+        <div class="typed" id="typed" aria-hidden="false"></div>
+      </div>
+
+      <div class="meta reveal" id="metaRow">
+        <div class="card"><small>Exact age</small><strong id="exactAge">—</strong></div>
+        <div class="card"><small>Days since birth</small><strong id="daysSince">—</strong></div>
+        <div class="card"><small>Next birthday</small><strong id="daysTo">—</strong></div>
+      </div>
+
+      <div class="slideshow reveal" aria-label="Photo slideshow">
+        <div class="slides" id="slides">
+          <!-- replace these with your images -->
+          <img src="IMG-20251019-WA0007.jpg" alt="Rayyan 1">
+          <img src="IMG-20251019-WA0005.jpg" alt="Rayyan 2">
+          <img src="IMG-20251019-WA0006.jpg" alt="Rayyan 3">
+        </div>
+        <div class="slide-controls">
+          <div class="dots" id="dots"></div>
+          <div style="display:flex;gap:8px">
+            <div class="arrow btn" id="prev">◀</div>
+            <div class="arrow btn" id="next">▶</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note reveal" style="margin-top:14px">
+        <strong>Message from Ismail</strong>
+        <p style="margin-top:8px;color:var(--muted)">Rayyan — wishing you growth, laughter, and success. Keep pushing forward. Proud of you, always.</p>
+      </div>
+    </section>
+
+    <aside class="side reveal">
+      <div class="side-inner">
+        <div class="message">
+          <strong>Birthday snapshot</strong>
+          <p style="margin-top:8px;color:var(--muted)">Quick stats about the big day.</p>
+        </div>
+
+        <div class="surprise" style="display:flex;justify-content:space-between;align-items:center">
+          <div><small class="small">Years lived</small><div class="big-age" id="sideYears">—</div></div>
+          <div style="text-align:right"><small class="small">Born</small><div style="font-weight:700">Oct 18</div><small class="small">2007</small></div>
+        </div>
+
+        <div class="message">
+          <strong>Gallery</strong>
+          <div class="gallery" style="margin-top:8px">
+            <div class="photo"><img src="IMG-20251019-WA0007.jpg" alt=""></div>
+            <div class="photo"><img src="IMG-20251019-WA0005.jpg" alt=""></div>
+            <div class="photo"><img src="IMG-20251019-WA0006.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div style="text-align:center;margin-top:14px;color:var(--muted);font-size:13px">Made with care by Ismail Shah</div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-card">
+    <button id="closeModal" class="close" aria-label="Close">✕</button>
+    <h3>🎉 Surprise, Rayyan!</h3>
+    <p style="margin-top:8px;color:var(--muted)">You're amazing ~ wishing you a year full of wins, laughter and great memories.</p>
+    <div style="margin-top:12px"><button id="partyConfetti" class="btn">Celebrate 🎊</button></div>
+  </div>
+</div>
+
+<!-- Canvas particles and confetti layer -->
+<canvas id="particleCanvas"></canvas>
+<div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+
+<!-- Audio -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="music/party.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* ====== CONFIG ====== */
+const BIRTH = { year: 2007, month: 10, day: 18 };
+const INTRO_MS = 3200;
+const SLIDE_MS = 4800;
+
+/* ====== UTIL: exact age ====== */
+function calcExactAge(birth, now=new Date()){
+  let y = now.getFullYear() - birth.getFullYear();
+  let m = now.getMonth() - birth.getMonth();
+  let d = now.getDate() - birth.getDate();
+  if (d < 0){ const prev = new Date(now.getFullYear(), now.getMonth(), 0); d += prev.getDate(); m -= 1; }
+  if (m < 0){ m += 12; y -= 1; }
+  const totalDays = Math.floor((now - birth)/(1000*60*60*24));
+  return { years: y, months: m, days: d, totalDays };
+}
+
+/* ====== DOM Refs ====== */
+const typedEl = document.getElementById('typed');
+const exactAgeEl = document.getElementById('exactAge');
+const sideYears = document.getElementById('sideYears');
+const daysSince = document.getElementById('daysSince');
+const daysTo = document.getElementById('daysTo');
+const intro = document.getElementById('intro');
+const particleCanvas = document.getElementById('particleCanvas');
+const confettiLayer = document.getElementById('confettiLayer');
+const modal = document.getElementById('modal');
+const surpriseBtn = document.getElementById('surpriseBtn');
+const closeModal = document.getElementById('closeModal');
+const partyConfetti = document.getElementById('partyConfetti');
+const musicBtn = document.getElementById('musicBtn');
+const muteBtn = document.getElementById('muteBtn');
+const bgMusic = document.getElementById('bgMusic');
+const slideContainer = document.getElementById('slides');
+const imgs = Array.from(slideContainer.querySelectorAll('img'));
+const dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+/* ====== Typing effect (looping) ====== */
+const lines = [
+  "Your skills, jokes, and energy light up the room.",
+  "May this year bring new wins, new laughs, and great friends.",
+  "Keep building, keep dreaming — the best is ahead.",
+  "Happy Birthday, Rayyan 🎂"
+];
+let tIndex=0,cIndex=0,deleting=false;
+function tick(){
+  const current = lines[tIndex];
+  if(!deleting){
+    typedEl.textContent = current.slice(0,cIndex+1);
+    cIndex++;
+    if(cIndex===current.length){ deleting=true; setTimeout(tick,1200); return; }
+  } else {
+    typedEl.textContent = current.slice(0,cIndex-1);
+    cIndex--;
+    if(cIndex<=0){ deleting=false; tIndex=(tIndex+1)%lines.length; }
+  }
+  setTimeout(tick, deleting?40:30);
+}
+tick();
+
+/* ====== Age update ====== */
+function updateAges(){
+  const birth = new Date(BIRTH.year,BIRTH.month-1,BIRTH.day);
+  const age = calcExactAge(birth,new Date());
+  exactAgeEl.textContent = `${age.years} yrs ${age.months} mo ${age.days} days`;
+  sideYears.textContent = age.years;
+  daysSince.textContent = `${age.totalDays.toLocaleString()} days`;
+  // next bday
+  let now = new Date();
+  let next = new Date(now.getFullYear(), BIRTH.month-1, BIRTH.day);
+  if (now > next) next = new Date(now.getFullYear()+1, BIRTH.month-1, BIRTH.day);
+  const days = Math.ceil((next - now)/(1000*60*60*24));
+  daysTo && (daysTo.textContent = days===0 ? 'Today!' : `${days} day${days>1?'s':''}`);
+}
+updateAges();
+setInterval(updateAges, 1000*60*30); // refresh every 30 minutes
+
+/* ====== Slideshow: auto-change + cinematic zoom + confetti on change ====== */
+let current = 0, slideTimer;
+function buildDots(){
+  imgs.forEach((_,i)=>{ const d = document.createElement('div'); d.className = 'dot'+(i===0?' active':''); d.tabIndex=0; d.addEventListener('click',()=>show(i)); d.addEventListener('keydown', e=>{ if(e.key==='Enter') show(i); }); dotsWrap.appendChild(d); });
+}
+function show(i, trigger=false){
+  imgs.forEach((img,idx)=> img.classList.toggle('active', idx===i));
+  Array.from(dotsWrap.children).forEach((d,idx)=> d.classList.toggle('active', idx===i));
+  current = i;
+  if (trigger) {
+    // small burst for excitement when slide changes automatically
+    runMiniConfetti();
+    spawnSparkles(8);
+  }
+}
+function nextSlide(){ show((current+1)%imgs.length, true); }
+function startSlides(){ clearInterval(slideTimer); slideTimer = setInterval(nextSlide, SLIDE_MS); }
+buildDots(); show(0); startSlides();
+
+slideContainer.addEventListener('mouseenter', ()=> clearInterval(slideTimer));
+slideContainer.addEventListener('mouseleave', startSlides);
+slideContainer.addEventListener('touchstart', ()=> clearInterval(slideTimer), {passive:true});
+slideContainer.addEventListener('touchend', startSlides, {passive:true});
+prevBtn && prevBtn.addEventListener('click', ()=> { show((current-1+imgs.length)%imgs.length, true); startSlides(); });
+nextBtn && nextBtn.addEventListener('click', ()=> { show((current+1)%imgs.length, true); startSlides(); });
+
+/* ====== Audio autoplay attempt + fallback ====== */
+async function tryAutoplay(){
+  try { await bgMusic.play(); musicBtn.textContent='Pause ⏸'; musicBtn.setAttribute('aria-pressed','true'); }
+  catch(e){ musicBtn.textContent='Play ▶'; musicBtn.setAttribute('aria-pressed','false'); initUserFallback(); }
+}
+musicBtn.addEventListener('click', async ()=>{
+  try {
+    if (bgMusic.paused){ await bgMusic.play(); musicBtn.textContent='Pause ⏸'; musicBtn.setAttribute('aria-pressed','true'); }
+    else { bgMusic.pause(); musicBtn.textContent='Play ▶'; musicBtn.setAttribute('aria-pressed','false'); }
+  } catch(e){ console.log('audio error', e); }
+});
+muteBtn.addEventListener('click', ()=> { bgMusic.muted = !bgMusic.muted; muteBtn.textContent = bgMusic.muted ? 'Muted 🔇' : 'Mute 🔈'; });
+
+function initUserFallback(){
+  function userPlay(){ bgMusic.play().then(()=>{ musicBtn.textContent='Pause ⏸'; musicBtn.setAttribute('aria-pressed','true'); }).catch(()=>{}); window.removeEventListener('pointerdown', userPlay); window.removeEventListener('touchstart', userPlay); window.removeEventListener('keydown', userPlay); }
+  window.addEventListener('pointerdown', userPlay, {passive:true});
+  window.addEventListener('touchstart', userPlay, {passive:true});
+  window.addEventListener('keydown', userPlay, {passive:true});
+}
+
+/* ====== Intro overlay hide ====== */
+function hideIntro(){ intro.classList.add('hide'); setTimeout(()=> intro.style.display='none', 700); }
+
+/* ====== Modal + confetti ====== */
+surpriseBtn.addEventListener('click', ()=> { modal.classList.add('show'); modal.setAttribute('aria-hidden','false'); spawnSparkles(16); });
+closeModal.addEventListener('click', ()=> { modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); });
+document.addEventListener('keydown', e=> { if (e.key==='Escape') { modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); } });
+
+/* DOM confetti burst (big) */
+function runConfettiBurst(){
+  const colors = ['#FF7AB6','#7BE5FF','#FFD76B','#B9FF7A','#9B8CFF'];
+  const total = 110;
+  for (let i=0;i<total;i++){
+    const el = document.createElement('div');
+    el.style.position = 'fixed';
+    el.style.left = (50 + (Math.random()*220 - 110)) + 'vw';
+    el.style.top = '-10vh';
+    el.style.width = (6 + Math.random()*12) + 'px';
+    el.style.height = (8 + Math.random()*12) + 'px';
+    el.style.background = colors[Math.floor(Math.random()*colors.length)];
+    el.style.opacity = '0.95';
+    el.style.transform = `rotate(${Math.random()*360}deg)`;
+    el.style.borderRadius = '3px';
+    el.style.zIndex = 99999;
+    document.body.appendChild(el);
+    const dur = 1300 + Math.random()*1400;
+    el.animate([
+      { transform: el.style.transform + ' translateY(0) rotate(0deg)', opacity:1 },
+      { transform: el.style.transform + ` translateY(${70 + Math.random()*140}vh) rotate(${360 + Math.random()*720}deg)`, opacity:0.2 }
+    ], { duration: dur, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    setTimeout(()=> el.remove(), dur + 80);
+  }
+}
+
+/* smaller confetti for slide changes */
+function runMiniConfetti(){
+  const colors = ['#FF7AB6','#7BE5FF','#FFD76B','#B9FF7A'];
+  const total = 30;
+  for (let i=0;i<total;i++){
+    const el = document.createElement('div');
+    el.style.position = 'fixed';
+    el.style.left = (40 + (Math.random()*40)) + 'vw';
+    el.style.top = (10 + Math.random()*10) + 'vh';
+    el.style.width = (5 + Math.random()*8) + 'px';
+    el.style.height = (6 + Math.random()*8) + 'px';
+    el.style.background = colors[Math.floor(Math.random()*colors.length)];
+    el.style.opacity = '0.95';
+    el.style.transform = `rotate(${Math.random()*360}deg)`;
+    el.style.borderRadius = '2px';
+    el.style.zIndex = 99999;
+    document.body.appendChild(el);
+    const dur = 700 + Math.random()*700;
+    el.animate([
+      { transform: el.style.transform + ' translateY(0) rotate(0deg)', opacity:1 },
+      { transform: el.style.transform + ` translateY(${45 + Math.random()*70}vh) rotate(${360 + Math.random()*360}deg)`, opacity:0.2 }
+    ], { duration: dur, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    setTimeout(()=> el.remove(), dur + 60);
+  }
+}
+
+/* sparkles placed into confetti area */
+function spawnSparkles(count=8){
+  for (let i=0;i<count;i++){
+    const s = document.createElement('div');
+    s.style.position='absolute';
+    s.style.left = (10 + Math.random()*80) + '%';
+    s.style.top = (10 + Math.random()*80) + '%';
+    const size = 3 + Math.random()*10;
+    s.style.width = s.style.height = size + 'px';
+    s.style.borderRadius='50%';
+    s.style.background = 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.12))';
+    s.style.opacity = 0;
+    s.style.transform = 'scale(0.4)';
+    s.style.zIndex = 99998;
+    confettiLayer.appendChild(s);
+    requestAnimationFrame(()=> { s.style.transition='opacity 260ms ease, transform 700ms ease'; s.style.opacity=1; s.style.transform='translateY(-8px) scale(1.1)'; });
+    setTimeout(()=>{ s.style.opacity=0; s.remove(); }, 900 + Math.random()*700);
+  }
+}
+
+/* ====== Canvas Particles (glowing floating blobs) ====== */
+const ctx = particleCanvas.getContext && particleCanvas.getContext('2d');
+let particles = [], W=0,H=0;
+function resizeCanvas(){ W = particleCanvas.width = innerWidth; H = particleCanvas.height = innerHeight; }
+function initParticles(){
+  particles = [];
+  const count = Math.min(80, Math.floor(W/16));
+  for (let i=0;i<count;i++){
+    particles.push({ x: Math.random()*W, y: Math.random()*H, vx:(Math.random()*0.6-0.3), vy:(Math.random()*0.4-0.1), r:1+Math.random()*3, alpha:0.08+Math.random()*0.5, hue:180+Math.random()*140 });
+  }
+}
+function draw(){
+  if(!ctx) return;
+  ctx.clearRect(0,0,W,H);
+  for(const p of particles){
+    p.x += p.vx; p.y += p.vy;
+    if(p.x < -50) p.x = W+50;
+    if(p.x > W+50) p.x = -50;
+    if(p.y < -50) p.y = H+50;
+    if(p.y > H+50) p.y = -50;
+    const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*12);
+    g.addColorStop(0, `hsla(${p.hue},85%,72%,${p.alpha})`);
+    g.addColorStop(0.2, `hsla(${p.hue},85%,70%,${p.alpha*0.45})`);
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r*8,0,Math.PI*2); ctx.fill();
+  }
+  requestAnimationFrame(draw);
+}
+
+/* ====== Scroll reveal (IntersectionObserver) ====== */
+const io = new IntersectionObserver(entries => { entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }); }, {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+/* ====== Init ====== */
+window.addEventListener('load', ()=>{
+  // intro hide
+  setTimeout(hideIntro, INTRO_MS);
+
+  // autoplay
+  tryAutoplay();
+
+  // canvas particles
+  if (ctx){ resizeCanvas(); initParticles(); draw(); window.addEventListener('resize', ()=>{ resizeCanvas(); initParticles(); }); }
+
+  // preload images
+  imgs.forEach(img=>{ if(!img.complete) img.addEventListener('load', ()=>{}); });
+
+  // ensure slideshow triggers confetti on auto-change: hook nextSlide timer restart
+  // already handled in nextSlide -> runMiniConfetti
+});
+
+/* ====== Auto-change slide with confetti trigger (ensure sync) ====== */
+let autoSlideInterval = setInterval(()=> { nextSlide(); }, SLIDE_MS);
+function nextSlide(){ show((current+1)%imgs.length, true); }
+function show(i, excite=false){
+  imgs.forEach((img,idx)=> img.classList.toggle('active', idx===i));
+  Array.from(dotsWrap.children).forEach((d,idx)=> d.classList.toggle('active', idx===i));
+  current = i;
+  if (excite) { runMiniConfetti(); spawnSparkles(6); }
+}
+
+/* Attach event listeners for manual prev/next (already added above) */
+prevBtn && prevBtn.addEventListener('click', ()=> { show((current-1+imgs.length)%imgs.length, true); resetAuto(); });
+nextBtn && nextBtn.addEventListener('click', ()=> { show((current+1)%imgs.length, true); resetAuto(); });
+function resetAuto(){ clearInterval(autoSlideInterval); autoSlideInterval = setInterval(()=> nextSlide(), SLIDE_MS); }
+
+/* Buttons for confetti modal */
+partyConfetti && partyConfetti.addEventListener('click', ()=> runConfettiBurst());
+
+/* Expose big confetti to Surprise button as well */
+document.getElementById('surpriseBtn').addEventListener('click', ()=> { runConfettiBurst(); });
+
+/* Fallback user gesture for autoplay */
+function tryAutoplay(){ try { bgMusic.play().then(()=>{ musicBtn.textContent='Pause ⏸'; musicBtn.setAttribute('aria-pressed','true'); }).catch(()=> initUserFallback()); } catch(e){ initUserFallback(); } }
+function initUserFallback(){ function onUser(){ bgMusic.play().then(()=>{ musicBtn.textContent='Pause ⏸'; musicBtn.setAttribute('aria-pressed','true'); }).catch(()=>{}); window.removeEventListener('pointerdown', onUser); window.removeEventListener('touchstart', onUser); window.removeEventListener('keydown', onUser); } window.addEventListener('pointerdown', onUser, {passive:true}); window.addEventListener('touchstart', onUser, {passive:true}); window.addEventListener('keydown', onUser, {passive:true}); }
+
+</script>
+</body>
+</html>
